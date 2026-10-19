@@ -1,6 +1,8 @@
 .experience-section {
   padding: 80px 0;
+  width: 100%;
   max-width: 1000px;
+  min-width: 0;
   margin: 0 auto;
   scroll-margin-top: 100px;
 }
@@ -217,6 +219,7 @@
 @media (max-width: 768px) {
   .experience-section {
     padding: 60px 0;
+    width: 100%;
   }
   .experience-header .title {
     font-size: 2.2rem;
@@ -241,5 +244,18 @@
   }
   .timeline-card {
     padding: 20px;
+  }
+
+  .timeline-container,
+  .timeline-item,
+  .timeline-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .role-title,
+  .role-desc,
+  .achievements-list li {
+    overflow-wrap: anywhere;
   }
 }

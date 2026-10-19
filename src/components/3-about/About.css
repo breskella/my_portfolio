@@ -1,6 +1,8 @@
 .about-section {
   padding: 60px 0;
+  width: 100%;
   max-width: 950px;
+  min-width: 0;
   margin: 0 auto;
   scroll-margin-top: 100px;
 }
@@ -152,5 +154,20 @@
   }
   .about-header .title {
     font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    width: 100%;
+  }
+
+  .about-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .about-content p,
+  .about-content .highlight-lead {
+    overflow-wrap: anywhere;
   }
 }

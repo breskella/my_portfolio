@@ -8,6 +8,8 @@ section.hero {
     padding-top: 80px;
     gap: 3rem;
     max-width: 1200px;
+    width: 100%;
+    min-width: 0;
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
@@ -29,6 +31,7 @@ section.hero::before {
 
 section.hero .left-section {
     flex: 1;
+    min-width: 0;
     position: relative;
     z-index: 1;
     display: flex;
@@ -162,6 +165,8 @@ section.hero .all-icons .icon a i:hover {
 
 section.hero .right-section {
     flex: 1;
+    min-width: 0;
+    width: 100%;
     position: relative;
     z-index: 1;
     display: flex;
@@ -257,5 +262,48 @@ section.hero .scroll-down i {
     }
     .btn-primary, .btn-outline {
         width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    section.hero {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        gap: 1.5rem;
+    }
+
+    section.hero::before {
+        left: 0;
+        width: min(450px, 100%);
+    }
+
+    section.hero .left-section,
+    section.hero .right-section {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    section.hero .main-title,
+    section.hero .name,
+    section.hero p.sub-title {
+        text-align: center;
+        overflow-wrap: anywhere;
+    }
+
+    section.hero .action-buttons {
+        width: min(100%, 20rem);
+        align-items: stretch;
+    }
+
+    section.hero .btn-primary,
+    section.hero .btn-outline {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    section.hero .animation {
+        width: 100%;
+        max-width: 22rem;
     }
 }

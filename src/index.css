@@ -3,6 +3,7 @@ html{
   font-family: "Roboto", sans-serif;
   letter-spacing: 0.1px;
   scroll-behavior: smooth;
+  overflow-x: clip;
 
 }
 
@@ -44,17 +45,26 @@ html { box-sizing: border-box; }
 body{
   background-color: var(--primary);
   color: #fff;
+  width: 100%;
+  min-width: 0;
+  overflow-x: clip;
   /* color: var(--title); */
 
 }
 
+#root{
+  width: 100%;
+  min-width: 0;
+}
+
 .container{
   border: 1px solid var(--border);
-  width: 82%;
+  width: 100%;
   max-width: 1250px;
   margin-left: auto;
   margin-right: auto;
   background-color: var(--secondary);
+  --container-padding: clamp(1rem, 4.8vw, 4.8rem);
   padding: 0 var(--container-padding);
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
   border-radius: 12px;
@@ -73,6 +83,7 @@ li{
 }
 a{
   all:unset;
+  box-sizing: border-box;
   cursor: pointer;
   transition: 0.2s;
 }
@@ -86,6 +97,7 @@ a{
 
 button{
   all:unset;
+  box-sizing: border-box;
 }
 
 button:hover{
@@ -138,14 +150,13 @@ button:active{
 @media (max-width: 1000px) {
   .container{
     --container-padding: 1.7rem;
-    width: 90%;
     padding: 0 var(--container-padding);
   }
 }
 
 @media (max-width: 600px) {
   .container{
-    width: 98%;
+    --container-padding: 1rem;
     padding: 0 var(--container-padding);
   }
 

@@ -5,7 +5,8 @@ header.flex {
     top: 0;
     left: 0;
     right: 0;
-    width: 100vw; 
+    width: 100%;
+    max-width: 100%;
     z-index: 1000;
     box-sizing: border-box;
     display: flex;
@@ -66,6 +67,10 @@ header button.mode {
     border: 1px solid rgba(244, 165, 96, 0.2);
     transition: 0.3s;
     cursor: pointer;
+}
+
+header button.menu {
+    display: none;
 }
 
 header button.menu:hover,
@@ -144,12 +149,20 @@ header .fixed ul.modal li a:hover {
 }
 
 /* Responsive design */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
+    header.flex {
+        padding: 0.85rem 1rem;
+    }
+
     header.flex nav {
         display: none;
     }
 
     header button.menu {
         display: flex;
+    }
+
+    header .fixed ul.modal {
+        width: min(100% - 2rem, 28rem);
     }
 }

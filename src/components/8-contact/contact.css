@@ -11,9 +11,15 @@ section.contact-us .title{
     margin-bottom: 1rem; 
 }
 
+section.contact-us,
+section.contact-us > .flex {
+    width: 100%;
+    min-width: 0;
+}
+
 section.contact-us .sub-title{
     color: var(--subtitle);
-    margin-right: 2rem;
+    margin-right: 0;
     line-height:2rem;
 }
 
@@ -23,6 +29,7 @@ section.contact-us label{
 
 section.contact-us #email, section.contact-us #message {
   all: unset;
+  box-sizing: border-box;
   background-color: rgba(63, 63, 70, 0.15);
   border: 1px solid rgb(63 63 70);
   width: 16rem;
@@ -97,7 +104,8 @@ section.contact-us .submit:hover{
   section.contact-us form{
     display: flex;
     flex-direction: column;
-    width: 85%;
+    width: 100%;
+    max-width: 100%;
   }
 
   section.contact-us form div.flex{
@@ -108,14 +116,35 @@ section.contact-us .submit:hover{
   section.contact-us #email, section.contact-us #message {
     width: 100%;
     margin-left: 0;
-    padding: 0.7rem 0;
+    padding: 0.7rem;
     margin-top: 1rem;
   }
 
   section.contact-us .submit{
-    width: 30%;
+    width: min(100%, 12rem);
     align-self: center;
   }
 
 
+}
+
+@media (max-width: 768px) {
+  section.contact-us > .flex {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  section.contact-us .sub-title {
+    max-width: 100%;
+  }
+
+  section.contact-us form,
+  section.contact-us form div.flex {
+    min-width: 0;
+  }
+
+  section.contact-us #email,
+  section.contact-us #message {
+    max-width: 100%;
+  }
 }

@@ -6,11 +6,15 @@
   flex-direction: column;
   align-items: stretch;
   padding-top: 3rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   scroll-margin-top: 80px;
 }
 
 .projects-header {
   width: 100%;
+  min-width: 0;
   text-align: center;
   margin-bottom: 3rem;
   display: flex;
@@ -36,6 +40,8 @@
   opacity: 0.85;
   letter-spacing: 0.5px;
   max-width: 600px;
+  width: 100%;
+  padding-inline: 0.5rem;
 }
 
 .projects-layout {
@@ -44,6 +50,8 @@
   align-items: start;
   gap: 2.5rem;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 /*=======================
@@ -53,6 +61,12 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.projects-layout .left-section,
+.projects-layout .right-section {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .projects-layout .left-section button {
@@ -678,13 +692,52 @@
   }
 }
 
+@media (max-width: 768px) {
+  #projects.projects-section {
+    padding-top: 2rem;
+  }
+
+  .projects-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+
+  .projects-layout .left-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .projects-layout .left-section button {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+  }
+
+  .projects-layout .right-section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 470px;
+  }
+
+  .card .box {
+    flex: 1;
+  }
+}
+
 @media (max-width: 600px) {
   .projects-layout .right-section {
     grid-template-columns: minmax(0, 1fr);
   }
 
   .card {
-    max-width: 380px;
+    max-width: 100%;
     justify-self: center;
   }
 
@@ -699,5 +752,13 @@
 
   .modal-title {
     font-size: 1.35rem;
+  }
+
+  .modal-overlay {
+    padding: 0.75rem;
+  }
+
+  .modal-body {
+    padding: 1rem;
   }
 }

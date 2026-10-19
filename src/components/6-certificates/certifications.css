@@ -1,6 +1,8 @@
 .certifications-section {
   padding: 60px 0;
+  width: 100%;
   max-width: 880px;
+  min-width: 0;
   margin: 0 auto;
   scroll-margin-top: 100px;
 }
@@ -276,5 +278,18 @@
   }
   .cert-title {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .certifications-section {
+    width: 100%;
+  }
+
+  .cert-grid {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
   }
 }
