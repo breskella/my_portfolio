@@ -65,7 +65,7 @@ section.hero .icon-verified {
 
 section.hero .name {
     font-size: 1.2rem;
-    color: #fff;
+    color: var(--title);
     margin-top: 1.5rem;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -78,7 +78,7 @@ section.hero .main-title {
     font-size: 2.8rem;
     line-height: 1.25;
     margin: 1.2rem 0;
-    color: #fff;
+    color: var(--title);
     font-weight: 800;
     text-align: left;
     max-width: 100%;
