@@ -1,0 +1,155 @@
+/* header design */
+header.flex {
+    /* Full width fixed positioning */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw; 
+    z-index: 1000;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color 0.3s ease; 
+}
+
+.header-left {
+    min-width: 2.4rem;
+    display: flex;
+    align-items: center;
+}
+header.flex nav {
+    background-color: var(--bgHeader);
+    padding: 0.77rem 1.6rem;
+    border-radius: 55px;
+    box-shadow: 1px 1px 40px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+header ul.flex {
+    gap: 20px;
+}
+
+header ul li a {
+    color: var(--title);
+    opacity: 0.9;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+header ul li a:hover {
+    color: var(--blue);
+    opacity: 1;
+}
+
+header button.menu {
+    display: none; /* Hidden on desktop viewports */
+}
+
+/* icon & button styles */
+header button.menu,
+header button.mode {
+    background-color: var(--bgHeader);
+    height: 2.4rem;
+    width: 2.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: var(--subtitle);
+    border: 1px solid rgba(244, 165, 96, 0.2);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+header button.menu:hover,
+header button.mode:hover {
+    color: var(--title);
+    border: 1px solid var(--blue);
+}
+
+header button.close {
+    background-color: transparent;
+    border: none;
+    color: var(--subtitle);
+    font-size: 1.5rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+header button.close:hover {
+    color: crimson;
+    transform: rotate(90deg);
+}
+
+/* Modal Styling (Mobile Menu) */
+header .fixed {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark backdrop overlay */
+    backdrop-filter: blur(10px); /* Glassmorphism blur */
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes modalPop {
+    0% { transform: scale(0.7); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+header .fixed ul.modal {
+    animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 85%;
+    margin-top: 3rem;
+    background-color: var(--secondary);
+    padding: 1.5rem 2rem;
+    border-radius: 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: fit-content;
+}
+
+header .fixed ul.modal li {
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+}
+
+header .fixed ul.modal li:first-child {
+    text-align: right;
+    border: none;
+    padding: 0;
+    margin-bottom: 0.5rem;
+}
+
+header .fixed ul.modal li:last-child {
+    border-bottom: none;
+}
+
+header .fixed ul.modal li a {
+    font-size: 1.1rem;
+    color: var(--title);
+    display: block;
+    width: 100%;
+}
+
+header .fixed ul.modal li a:hover {
+    color: var(--blue);
+    padding-left: 10px; /* Subtle hover nudge */
+}
+
+/* Responsive design */
+@media (max-width: 700px) {
+    header.flex nav {
+        display: none;
+    }
+
+    header button.menu {
+        display: flex;
+    }
+}

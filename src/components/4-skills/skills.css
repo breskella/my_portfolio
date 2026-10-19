@@ -1,0 +1,111 @@
+.skills-section {
+    padding: 80px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skills-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.skills-header .title {
+    font-size: 2.8rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.skills-header .title span {
+    color: var(--blue);
+}
+
+.skills-header .sub-title {
+    color: var(--subtitle);
+    font-size: 1.1rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.skill-card {
+    background: #11111b;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 30px 15px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s, border-color 0.4s, box-shadow 0.4s;
+}
+
+.skill-card:hover {
+    border-color: rgba(72, 181, 254, 0.4);
+    background: #161625;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.icon-box {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    z-index: 2;
+    display: inline-block; 
+    position: relative;
+}
+
+.glow-bg {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    filter: blur(25px);
+    opacity: 0.3;
+    z-index: 1;
+    border-radius: 50%;
+    transition: 0.4s ease;
+}
+
+.skill-card:hover .glow-bg {
+    opacity: 0.7;
+    filter: blur(35px);
+    transform: scale(1.5);
+}
+
+.skill-card:hover .skill-icon {
+    transform: rotate(360deg) scale(1.2);
+    transition: 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-card h3 {
+    color: #fff;
+    font-size: 1rem;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+@media (max-width: 600px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .skill-card {
+        padding: 25px 10px;
+    }
+    .skill-icon {
+        font-size: 2.2rem;
+    }
+}
