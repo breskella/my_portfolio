@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './Header.css'
+import './header.css'
 
 const Header = () => {
     const [showModal, setShowModal] = useState(false);
