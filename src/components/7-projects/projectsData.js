@@ -156,7 +156,7 @@ export const projectsData = [
       "Vite"
     ],
     githubLink: "https://github.com/breskella/my_portfolio",
-    demoLink: ""
+    demoLink: "https://my-portfolio-ntkt.vercel.app"
   },
   {
     id: "image-filter",
